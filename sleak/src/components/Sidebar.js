@@ -10,6 +10,7 @@ import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
 import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
 import AppsIcon from "@material-ui/icons/Apps";
+import AddIcon from "@material-ui/icons/Add";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
@@ -35,6 +36,10 @@ function Sidebar() {
       <SidebarOption Icon={AppsIcon} title="Apps" />
       <SidebarOption Icon={FileCopyIcon} title="File Browser" />
       <SidebarOption Icon={ExpandLessIcon} title="Show Less" />
+      <hr />
+      <SidebarOption Icon={ExpandMoreIcon} title="Channels" />
+      <hr />
+      <SidebarOption Icon={AddIcon} addChannelOption title="Add Channel" />
     </SidebarContainer>
   );
 }
@@ -45,19 +50,25 @@ const SidebarContainer = styled.div`
   background-color: var(--sleak-color);
   color: white;
   flex: 0.3;
-  border-top: 1px solid #49274b;
+  border-top: 1px solid var(--sleak-secondary);
   max-width: 260px;
   margin-top: 60px;
+
+  > hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--sleak-secondary);
+  }
 `;
 
 const SidebarHeader = styled.div`
   display: flex;
-  border-bottom: 1px solid #49274b;
+  border-bottom: 1px solid var(--sleak-secondary);
   padding: 13px;
 
   > .MuiSvgIcon-root {
     padding: 8px;
-    color: #49274b;
+    color: var(--sleak-secondary);
     font-size: 18px;
     background-color: white;
     border-radius: 999px;
@@ -83,6 +94,6 @@ const SidebarInfo = styled.div`
     font-size: 14px;
     margin-top: 1px;
     margin-right: 2px;
-    color: green;
+    color: #58e870;
   }
 `;

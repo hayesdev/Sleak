@@ -3,7 +3,8 @@
 }
 
 body {
-  --sleak-color: #3f0f40;
+  --sleak-color: #0c3940;
+  --sleak-secondary: #174e57;
   overflow: hidden;
 
   margin: 0;
