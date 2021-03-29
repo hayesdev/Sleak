@@ -4,9 +4,8 @@ import { Button } from "@material-ui/core";
 import { db } from "../firebase";
 import firebase from "firebase";
 
-function ChatInput({ channelName, channelId }) {
+function ChatInput({ channelName, channelId, chatRef }) {
   const [input, setInput] = useState("");
-  console.log(channelId);
 
   const sendMessage = (e) => {
     e.preventDefault();
@@ -20,8 +19,10 @@ function ChatInput({ channelName, channelId }) {
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       user: "Greg Hayes",
       userImage:
-        "https://www.dailyesports.gg/wp-content/uploads/2019/11/hearthstone-grandmasters-global-finals-blizzcon-2019-vkliooon-casie-semifinals-malygos-druid-1200x675.png",
+        "https://static.wikia.nocookie.net/hearthstone_gamepedia/images/7/7c/Malygos%28241%29.png/revision/latest/scale-to-width-down/200?cb=20160323223026",
     });
+
+    chatRef.current.scrollIntoView({ behavior: "smooth" });
 
     setInput("");
   };
@@ -29,7 +30,7 @@ function ChatInput({ channelName, channelId }) {
     <ChatInputContainer>
       <form>
         <input
-          placeholder={`Message #ROOM`}
+          placeholder={`Message #${channelName}`}
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
