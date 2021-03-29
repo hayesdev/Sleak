@@ -48,12 +48,7 @@ function Sidebar() {
 
       {channels?.docs.map((doc) => {
         return (
-          <SidebarOption
-            key={doc.id}
-            id={doc.id}
-            addChannelOption
-            title={doc.data().name}
-          />
+          <SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />
         );
       })}
     </SidebarContainer>
@@ -73,7 +68,7 @@ const SidebarContainer = styled.div`
   > hr {
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 1px solid var(--sleak-secondary);
+    border: 0.5px solid var(--sleak-secondary);
   }
 `;
 
