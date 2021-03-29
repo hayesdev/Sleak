@@ -5,24 +5,30 @@ import Header from "./components/Header.js";
 import Sidebar from "./components/Sidebar.js";
 import styled from "styled-components";
 import Chat from "./components/Chat";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "./firebase";
+import Login from "./components/Login";
 
 function App() {
+  const [user, loading] = useAuthState(auth);
   return (
     <div className="App">
       <Router>
-        <>
-          <Header />
-          <AppBody>
-            <Sidebar />
-            <Switch>
-              <Route path="/" exact>
-                <Chat />
-              </Route>
-            </Switch>
-          </AppBody>
-          {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        </>
+        {!user ? (
+          <Login />
+        ) : (
+          <>
+            <Header />
+            <AppBody>
+              <Sidebar />
+              <Switch>
+                <Route path="/" exact>
+                  <Chat />
+                </Route>
+              </Switch>
+            </AppBody>
+          </>
+        )}
       </Router>
     </div>
   );
