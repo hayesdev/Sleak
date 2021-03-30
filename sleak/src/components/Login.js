@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
 import { auth, provider } from "../firebase";
+import logo from "../green_S.jpg";
 
 function Login() {
   const signIn = (e) => {
@@ -11,10 +12,7 @@ function Login() {
   return (
     <LoginContainer>
       <LoginInnerContainer>
-        <img
-          src="https://cdn.mos.cms.futurecdn.net/SDDw7CnuoUGax6x9mTo7dd.jpg"
-          alt=""
-        />
+        <img src={logo} alt="sleak logo" />
         <h1>Sign in to Sleak</h1>
         <p>sleak.com</p>
 
@@ -45,7 +43,7 @@ const LoginInnerContainer = styled.div`
   > img {
     object-fit: contain;
     height: 100px;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
   }
 
   > button {

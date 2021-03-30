@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import SidebarOption from "./SidebarOption";
 import { useCollection } from "react-firebase-hooks/firestore";
-import { db } from "../firebase";
+import { auth, db } from "../firebase";
 
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import CreateIcon from "@material-ui/icons/Create";
@@ -16,10 +16,11 @@ import AppsIcon from "@material-ui/icons/Apps";
 import AddIcon from "@material-ui/icons/Add";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function Sidebar() {
   const [channels, loading, error] = useCollection(db.collection("rooms"));
-
+  const [user] = useAuthState(auth);
   return (
     <SidebarContainer>
       <SidebarHeader>
@@ -27,7 +28,7 @@ function Sidebar() {
           <h2>SLEAK HQ</h2>
           <h3>
             <FiberManualRecordIcon />
-            Greg Hayes
+            {user.displayName}
           </h3>
         </SidebarInfo>
         <CreateIcon />
@@ -83,6 +84,9 @@ const SidebarHeader = styled.div`
     font-size: 18px;
     background-color: white;
     border-radius: 999px;
+    :hover {
+      opacity: 0.8;
+    }
   }
 `;
 

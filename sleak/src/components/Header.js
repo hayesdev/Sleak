@@ -11,19 +11,17 @@ function Header() {
   const [user] = useAuthState(auth);
   return (
     <HeaderContainer>
-      {/* Header Left */}
       <HeaderLeft>
-        <HeaderAvatar src={user?.displayName} alt={user?.photoUrl} />
+        <HeaderAvatar
+          src={user.providerData[0].photoURL}
+          alt={user?.photoUrl}
+        />
         <AccessTimeIcon />
       </HeaderLeft>
-
-      {/* Header Search */}
       <HeaderSearch>
         <SearchIcon />
-        <input placeholder="Search Sleak" />
+        <input placeholder="Search Sleak HQ" />
       </HeaderSearch>
-
-      {/* Header Right */}
       <HeaderRight>
         <HelpOutlineIcon />
       </HeaderRight>
