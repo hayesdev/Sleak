@@ -1,15 +1,16 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
-import { db } from "../firebase";
+import { auth, db } from "../firebase";
 import firebase from "firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function ChatInput({ channelName, channelId, chatRef }) {
   const [input, setInput] = useState("");
-
+  const [user] = useAuthState(auth);
   const sendMessage = (e) => {
     e.preventDefault();
-
+    console.log(user.displayName);
     if (!channelId) {
       return false;
     }
@@ -17,7 +18,7 @@ function ChatInput({ channelName, channelId, chatRef }) {
     db.collection("rooms").doc(channelId).collection("messages").add({
       message: input,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      user: "Greg Hayes",
+      user: user.displayName,
       userImage:
         "https://static.wikia.nocookie.net/hearthstone_gamepedia/images/7/7c/Malygos%28241%29.png/revision/latest/scale-to-width-down/200?cb=20160323223026",
     });
