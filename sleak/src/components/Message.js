@@ -24,7 +24,7 @@ const MessageContainer = styled.div`
 
   > img {
     height: 60px;
-    border-radius: 8px;
+    border-radius: 100px;
   }
 `;
 

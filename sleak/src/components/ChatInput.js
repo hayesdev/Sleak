@@ -10,7 +10,6 @@ function ChatInput({ channelName, channelId, chatRef }) {
   const [user] = useAuthState(auth);
   const sendMessage = (e) => {
     e.preventDefault();
-    console.log(user.displayName);
     if (!channelId) {
       return false;
     }
@@ -19,8 +18,7 @@ function ChatInput({ channelName, channelId, chatRef }) {
       message: input,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       user: user.displayName,
-      userImage:
-        "https://static.wikia.nocookie.net/hearthstone_gamepedia/images/7/7c/Malygos%28241%29.png/revision/latest/scale-to-width-down/200?cb=20160323223026",
+      userImage: user.providerData[0].photoURL,
     });
 
     chatRef.current.scrollIntoView({ behavior: "smooth" });
