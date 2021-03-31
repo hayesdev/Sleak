@@ -18,7 +18,7 @@ function ChatInput({ channelName, channelId, chatRef }) {
       message: input,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       user: user.displayName,
-      userImage: user.providerData[0].photoURL,
+      userImage: user.photoURL,
     });
 
     chatRef.current.scrollIntoView({ behavior: "smooth" });

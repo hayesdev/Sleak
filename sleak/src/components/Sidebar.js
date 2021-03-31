@@ -28,7 +28,7 @@ function Sidebar() {
           <h2>SLEAK HQ</h2>
           <h3>
             <FiberManualRecordIcon />
-            {user.displayName}
+            {user?.displayName}
           </h3>
         </SidebarInfo>
         <CreateIcon />
