@@ -3,6 +3,7 @@ import styled from "styled-components";
 import SidebarOption from "./SidebarOption";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { auth, db } from "../firebase";
+import { Link } from "react-router-dom";
 
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import CreateIcon from "@material-ui/icons/Create";
@@ -19,8 +20,13 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 function Sidebar() {
-  const [channels, loading, error] = useCollection(db.collection("rooms"));
+  const [channels] = useCollection(db.collection("rooms"));
   const [user] = useAuthState(auth);
+
+  // const roomEnter = () => {
+  //   console.log("clicked");
+  // };
+
   return (
     <SidebarContainer>
       <SidebarHeader>
@@ -34,8 +40,13 @@ function Sidebar() {
         <CreateIcon />
       </SidebarHeader>
 
-      <SidebarOption Icon={InsertCommentIcon} title="Threads" />
-      <SidebarOption Icon={InboxIcon} title="Mentions & Reactions" />
+      <Link to="/threads" className="link">
+        <SidebarOption Icon={InsertCommentIcon} title="Threads" />
+      </Link>
+      <Link to="/mentions" className="link">
+        <SidebarOption Icon={InboxIcon} title="Mentions & Reactions" />
+      </Link>
+
       <SidebarOption Icon={DraftsIcon} title="Saved Items" />
       <SidebarOption Icon={BookmarkBorderIcon} title="Channel Browser" />
       <SidebarOption Icon={PeopleAltIcon} title="People & Groups" />
@@ -49,7 +60,12 @@ function Sidebar() {
 
       {channels?.docs.map((doc) => {
         return (
-          <SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />
+          <SidebarOption
+            key={doc.id}
+            id={doc.id}
+            title={doc.data().name}
+            // onClick={roomEnter}
+          />
         );
       })}
     </SidebarContainer>
@@ -70,6 +86,11 @@ const SidebarContainer = styled.div`
     margin-top: 10px;
     margin-bottom: 10px;
     border: 0.5px solid var(--sleak-secondary);
+  }
+
+  .link {
+    text-decoration: none;
+    color: white;
   }
 `;
 

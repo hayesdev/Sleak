@@ -5,11 +5,13 @@ import Header from "./components/Header.js";
 import Sidebar from "./components/Sidebar.js";
 import styled from "styled-components";
 import Chat from "./components/Chat";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "./firebase";
 import Login from "./components/Login";
+import Threads from "./components/Threads";
+import Mentions from "./components/Mentions";
 import logo from "./green_S.jpg";
 import Spinner from "react-spinkit";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "./firebase";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -35,8 +37,29 @@ function App() {
             <AppBody>
               <Sidebar />
               <Switch>
-                <Route path="/" exact>
+                <Route exact path="/">
                   <Chat />
+                </Route>
+                <Route path="/threads">
+                  <Threads />
+                </Route>
+                <Route path="/mentions">
+                  <Mentions />
+                </Route>
+                <Route path="/saved">
+                  <Mentions />
+                </Route>
+                <Route path="/channel-browser">
+                  <Mentions />
+                </Route>
+                <Route path="/people">
+                  <Mentions />
+                </Route>
+                <Route path="/apps">
+                  <Mentions />
+                </Route>
+                <Route path="/file-browser">
+                  <Mentions />
                 </Route>
               </Switch>
             </AppBody>

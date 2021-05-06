@@ -1,20 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
-function Threads() {
+function Mentions() {
   return (
-    <ThreadContainer>
-      <h3>This is where you can start a new thread in Sleak :)</h3>
+    <MentionContainer>
+      <h3>
+        This is where you can see mentions of you and reactions in Sleak :)
+      </h3>
       <p>
         <a href="#">Click here</a> to start a thread!
       </p>
-    </ThreadContainer>
+    </MentionContainer>
   );
 }
 
-export default Threads;
+export default Mentions;
 
-const ThreadContainer = styled.div`
+const MentionContainer = styled.div`
   flex: 0.7;
   flex-grow: 1;
   overflow-y: scroll;

@@ -4,6 +4,8 @@ import { enterRoom } from "../features/appSlice";
 import styled from "styled-components";
 import { db } from "../firebase";
 
+import { Link } from "react-router-dom";
+
 function SidebarOption({ Icon, title, addChannelOption, id }) {
   const dispatch = useDispatch();
 
@@ -34,7 +36,9 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
         <h3>{title}</h3>
       ) : (
         <SidebarOptionChannel>
-          <span>#</span> {title}
+          <Link to="/" className="link">
+            <span>#</span> {title}
+          </Link>
         </SidebarOptionChannel>
       )}
     </SidebarOptionContainer>
@@ -67,4 +71,10 @@ const SidebarOptionContainer = styled.div`
 const SidebarOptionChannel = styled.h3`
   font-weight: 300;
   padding: 10px 0;
+  margin-left: 15px;
+
+  .link {
+    text-decoration: none;
+    color: white;
+  }
 `;
