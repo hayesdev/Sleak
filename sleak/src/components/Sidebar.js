@@ -46,12 +46,22 @@ function Sidebar() {
       <Link to="/mentions" className="link">
         <SidebarOption Icon={InboxIcon} title="Mentions & Reactions" />
       </Link>
+      <Link to="/saved" className="link">
+        <SidebarOption Icon={DraftsIcon} title="Saved Items" />
+      </Link>
+      <Link to="/channels" className="link">
+        <SidebarOption Icon={BookmarkBorderIcon} title="Channel Browser" />
+      </Link>
+      <Link to="/people" className="link">
+        <SidebarOption Icon={PeopleAltIcon} title="People & Groups" />
+      </Link>
+      <Link className="link">
+        <SidebarOption Icon={AppsIcon} title="Apps" />
+      </Link>
+      <Link className="link">
+        <SidebarOption Icon={FileCopyIcon} title="File Browser" />
+      </Link>
 
-      <SidebarOption Icon={DraftsIcon} title="Saved Items" />
-      <SidebarOption Icon={BookmarkBorderIcon} title="Channel Browser" />
-      <SidebarOption Icon={PeopleAltIcon} title="People & Groups" />
-      <SidebarOption Icon={AppsIcon} title="Apps" />
-      <SidebarOption Icon={FileCopyIcon} title="File Browser" />
       <SidebarOption Icon={ExpandLessIcon} title="Show Less" />
       <hr />
       <SidebarOption Icon={ExpandMoreIcon} title="Channels" />

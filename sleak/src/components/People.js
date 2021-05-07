@@ -1,20 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
-function Mentions() {
+function People() {
   return (
-    <MentionContainer>
-      <h3>View mentions of you and see reactions in Sleak :)</h3>
+    <PeopleContainer>
+      <h3>Connect with new people or groups in the Sleak community :)</h3>
       <p>
-        <a href="#">Click here</a> to see your mentions!
+        <a href="#">Click here</a> to start exploring!
       </p>
-    </MentionContainer>
+    </PeopleContainer>
   );
 }
 
-export default Mentions;
+export default People;
 
-const MentionContainer = styled.div`
+const PeopleContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

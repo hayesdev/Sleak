@@ -1,20 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
-function Mentions() {
+function ChannelBrowser() {
   return (
-    <MentionContainer>
-      <h3>View mentions of you and see reactions in Sleak :)</h3>
+    <ChannelContainer>
+      <h3>Here you can browse available Sleak channels :)</h3>
       <p>
-        <a href="#">Click here</a> to see your mentions!
+        <a href="#">Click here</a> to start browsing!
       </p>
-    </MentionContainer>
+    </ChannelContainer>
   );
 }
 
-export default Mentions;
+export default ChannelBrowser;
 
-const MentionContainer = styled.div`
+const ChannelContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

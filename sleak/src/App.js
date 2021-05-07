@@ -8,6 +8,9 @@ import Chat from "./components/Chat";
 import Login from "./components/Login";
 import Threads from "./components/Threads";
 import Mentions from "./components/Mentions";
+import SavedItems from "./components/SavedItems";
+import ChannelBrowser from "./components/ChannelBrowser";
+import People from "./components/People";
 import logo from "./green_S.jpg";
 import Spinner from "react-spinkit";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -47,13 +50,13 @@ function App() {
                   <Mentions />
                 </Route>
                 <Route path="/saved">
-                  <Mentions />
+                  <SavedItems />
                 </Route>
-                <Route path="/channel-browser">
-                  <Mentions />
+                <Route path="/channels">
+                  <ChannelBrowser />
                 </Route>
                 <Route path="/people">
-                  <Mentions />
+                  <People />
                 </Route>
                 <Route path="/apps">
                   <Mentions />

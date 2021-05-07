@@ -15,8 +15,15 @@ function Threads() {
 export default Threads;
 
 const ThreadContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   flex: 0.7;
   flex-grow: 1;
   overflow-y: scroll;
-  margin-top: 60px;
+  > h3,
+  p {
+    margin: 5px;
+  }
 `;

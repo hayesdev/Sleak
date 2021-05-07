@@ -1,20 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
-function Mentions() {
+function SavedItems() {
   return (
-    <MentionContainer>
-      <h3>View mentions of you and see reactions in Sleak :)</h3>
+    <SavedContainer>
+      <h3>This is where you can view items you have saved :)</h3>
       <p>
-        <a href="#">Click here</a> to see your mentions!
+        <a href="#">Click here</a> to view your items!
       </p>
-    </MentionContainer>
+    </SavedContainer>
   );
 }
 
-export default Mentions;
+export default SavedItems;
 
-const MentionContainer = styled.div`
+const SavedContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

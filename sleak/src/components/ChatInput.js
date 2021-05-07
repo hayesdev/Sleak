@@ -48,6 +48,10 @@ const ChatInputContainer = styled.div`
     position: relative;
     display: flex;
     justify-content: center;
+    @media (max-width: 480px) {
+      width: 100px;
+      justify-content: right;
+    }
   }
   > form > input {
     position: fixed;
