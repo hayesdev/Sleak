@@ -4,9 +4,9 @@ import styled from "styled-components";
 function Mentions() {
   return (
     <MentionContainer>
-      <h3>View mentions of you and see reactions in Sleak :)</h3>
+      <h3>View your mentions and see reactions in Sleak 🤩</h3>
       <p>
-        <a href="#">Click here</a> to see your mentions!
+        Select a channel to chat, or <a href="#">click here</a> to see mentions!
       </p>
     </MentionContainer>
   );

@@ -10,7 +10,9 @@ import Threads from "./components/Threads";
 import Mentions from "./components/Mentions";
 import SavedItems from "./components/SavedItems";
 import ChannelBrowser from "./components/ChannelBrowser";
+import FileBrowser from "./components/FileBrowser";
 import People from "./components/People";
+import Apps from "./components/Apps";
 import logo from "./green_S.jpg";
 import Spinner from "react-spinkit";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -59,10 +61,10 @@ function App() {
                   <People />
                 </Route>
                 <Route path="/apps">
-                  <Mentions />
+                  <Apps />
                 </Route>
-                <Route path="/file-browser">
-                  <Mentions />
+                <Route path="/files">
+                  <FileBrowser />
                 </Route>
               </Switch>
             </AppBody>

@@ -4,9 +4,10 @@ import styled from "styled-components";
 function People() {
   return (
     <PeopleContainer>
-      <h3>Connect with new people or groups in the Sleak community :)</h3>
+      <h3>Connect with new people in the Sleak community 😎</h3>
       <p>
-        <a href="#">Click here</a> to start exploring!
+        Select a channel to chat, or <a href="#">click here</a> to start
+        exploring!
       </p>
     </PeopleContainer>
   );

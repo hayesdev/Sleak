@@ -4,9 +4,10 @@ import styled from "styled-components";
 function ChannelBrowser() {
   return (
     <ChannelContainer>
-      <h3>Here you can browse available Sleak channels :)</h3>
+      <h3>Here you can browse available Sleak channels 🧐</h3>
       <p>
-        <a href="#">Click here</a> to start browsing!
+        Select a channel to chat, or <a href="#">click here</a> to start
+        browsing!
       </p>
     </ChannelContainer>
   );

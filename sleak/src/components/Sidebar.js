@@ -55,10 +55,10 @@ function Sidebar() {
       <Link to="/people" className="link">
         <SidebarOption Icon={PeopleAltIcon} title="People & Groups" />
       </Link>
-      <Link className="link">
+      <Link to="/apps" className="link">
         <SidebarOption Icon={AppsIcon} title="Apps" />
       </Link>
-      <Link className="link">
+      <Link to="/files" className="link">
         <SidebarOption Icon={FileCopyIcon} title="File Browser" />
       </Link>
 

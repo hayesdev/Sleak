@@ -1,21 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 
-function Threads() {
+function Apps() {
   return (
-    <ThreadContainer>
-      <h3>This is where you can start a new thread in Sleak 🤗</h3>
+    <AppsContainer>
+      <h3>Search from many new and useful apps in Sleak 🥰 </h3>
       <p>
         Select a channel to chat, or <a href="#">click here</a> to start a
-        thread!
+        search!
       </p>
-    </ThreadContainer>
+    </AppsContainer>
   );
 }
 
-export default Threads;
+export default Apps;
 
-const ThreadContainer = styled.div`
+const AppsContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

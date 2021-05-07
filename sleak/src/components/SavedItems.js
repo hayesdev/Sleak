@@ -4,9 +4,10 @@ import styled from "styled-components";
 function SavedItems() {
   return (
     <SavedContainer>
-      <h3>This is where you can view items you have saved :)</h3>
+      <h3>This is where you can view items you have saved 😇</h3>
       <p>
-        <a href="#">Click here</a> to view your items!
+        Select a channel to chat, or <a href="#">click here</a> to view your
+        items!
       </p>
     </SavedContainer>
   );

@@ -1,21 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 
-function Threads() {
+function FileBrowser() {
   return (
-    <ThreadContainer>
-      <h3>This is where you can start a new thread in Sleak 🤗</h3>
+    <FileContainer>
+      <h3>Here you can browse files you have saved in Sleak 🤓</h3>
       <p>
-        Select a channel to chat, or <a href="#">click here</a> to start a
-        thread!
+        Select a channel to chat, or <a href="#">click here</a> to start
+        browsing!
       </p>
-    </ThreadContainer>
+    </FileContainer>
   );
 }
 
-export default Threads;
+export default FileBrowser;
 
-const ThreadContainer = styled.div`
+const FileContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
